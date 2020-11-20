@@ -1,0 +1,158 @@
+openapi: 3.0.1
+info:
+  title: Notification Management API
+  description: This API offers services of control over notifications.
+  contact:
+    name: G2 - Family Lock
+    url: https://s-computing.blogspot.com/2020/09/familylock.html
+    email: g2_family_lock@gmail.com
+  license:
+    name: CC-BY-NC-CA-4.0
+    url: https://creativecommons.org/licenses/by-nc/4.0/
+  version: "1.0"
+servers:
+- url: http://notification.familylock.es
+  description: Production server
+- url: http://beta.notification.familylock.es
+  description: Beta server
+paths:
+  /notification/user:
+    post:
+      tags:
+      - Notification
+      summary: Send notification to the user
+      description: Send notification to the user
+      operationId: send_notification_user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Notification'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                title: OK
+                type: string
+                example: OK
+                x-content-type: text/plain
+        "404":
+          description: Not found response
+          content:
+            text/plain:
+              schema:
+                title: Endpoint not found
+                type: string
+                example: Not found
+                x-content-type: text/plain
+      x-swagger-router-controller: LegitimatePerson
+      x-openapi-router-controller: openapi_server.controllers.legitimate_person_controller
+  /notification/legitimate_person:
+    post:
+      tags:
+      - Notification
+      summary: Send notification to one relative of the user
+      description: Send notification to one relative of the user
+      operationId: send_notification_one_person
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OneNotification'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                title: OK
+                type: string
+                example: OK
+                x-content-type: text/plain
+        "404":
+          description: Not found response
+          content:
+            text/plain:
+              schema:
+                title: Endpoint not found
+                type: string
+                example: Not found
+                x-content-type: text/plain
+      x-swagger-router-controller: LegitimatePerson
+      x-openapi-router-controller: openapi_server.controllers.legitimate_person_controller
+  /notification:
+    post:
+      tags:
+      - Notification
+      summary: Send notification to all the people close to the user
+      description: Send notification to all the people close to the user
+      operationId: send_notification_all
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Notification'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                title: OK
+                type: string
+                example: OK
+                x-content-type: text/plain
+        "404":
+          description: Not found response
+          content:
+            text/plain:
+              schema:
+                title: Endpoint not found
+                type: string
+                example: Not found
+                x-content-type: text/plain
+      x-swagger-router-controller: LegitimatePerson
+      x-openapi-router-controller: openapi_server.controllers.legitimate_person_controller
+components:
+  schemas:
+    Notification:
+      type: object
+      properties:
+        known:
+          type: boolean
+        name:
+          type: string
+      example:
+        known: true
+        name: Antonio
+      x-body-name: visit
+    OneNotification:
+      type: object
+      properties:
+        device_mac:
+          type: string
+        known:
+          type: boolean
+        name:
+          type: string
+      example:
+        device_mac: ff:ff:ff:ff:ff:ff
+        known: true
+        name: Antonio
+      x-body-name: visit
+  responses:
+    "404NotFound":
+      description: Not found response
+      content:
+        text/plain:
+          schema:
+            title: Endpoint not found
+            type: string
+            example: Not found
+            x-content-type: text/plain
+
