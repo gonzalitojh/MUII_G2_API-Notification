@@ -14,6 +14,8 @@ VERSION = "1.0.0"
 
 REQUIRES = ["connexion"]
 
+ALLOWED_HOSTS =['muii-g2-api-notification.herokuapp.com', '127.0.0.1']
+
 setup(
     name=NAME,
     version=VERSION,

@@ -1,1 +1,1 @@
-web: gunicorn swagger_server.__main__:__main__ --log-file -
+web: gunicorn swagger_server.__main__ --log-file -
