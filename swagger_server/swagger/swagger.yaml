@@ -48,8 +48,8 @@ paths:
                 type: string
                 example: Not found
                 x-content-type: text/plain
-      x-swagger-router-controller: LegitimatePerson
-      x-openapi-router-controller: openapi_server.controllers.legitimate_person_controller
+      x-swagger-router-controller: Notification
+      x-openapi-router-controller: swagger_server.controllers.notification_controller
   /notification/legitimate_person:
     post:
       tags:
@@ -82,8 +82,8 @@ paths:
                 type: string
                 example: Not found
                 x-content-type: text/plain
-      x-swagger-router-controller: LegitimatePerson
-      x-openapi-router-controller: openapi_server.controllers.legitimate_person_controller
+      x-swagger-router-controller: Notification
+      x-openapi-router-controller: swagger_server.controllers.notification_controller
   /notification:
     post:
       tags:
@@ -116,8 +116,8 @@ paths:
                 type: string
                 example: Not found
                 x-content-type: text/plain
-      x-swagger-router-controller: LegitimatePerson
-      x-openapi-router-controller: openapi_server.controllers.legitimate_person_controller
+      x-swagger-router-controller: Notification
+      x-openapi-router-controller: swagger_server.controllers.notification_controller
 components:
   schemas:
     Notification:
