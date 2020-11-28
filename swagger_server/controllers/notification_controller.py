@@ -43,7 +43,7 @@ def send_notification_one_person(visit):  # noqa: E501
             known_visitor = 'known and his/her name is ' + visit.name
         else:
             known_visitor = 'not known'
-    return MESSAGE_TO_ONE_LEGITIMATE_PERSON.format(visit.device_mac, known_visitor)
+    return MESSAGE_TO_ONE_LEGITIMATE_PERSON.format(visit.person_phone, known_visitor)
 
 
 def send_notification_user(visit):  # noqa: E501

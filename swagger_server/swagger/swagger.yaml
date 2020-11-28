@@ -134,14 +134,14 @@ components:
     OneNotification:
       type: object
       properties:
-        device_mac:
+        person_phone:
           type: string
         known:
           type: boolean
         name:
           type: string
       example:
-        device_mac: ff:ff:ff:ff:ff:ff
+        person_phone: ff:ff:ff:ff:ff:ff
         known: true
         name: Antonio
       x-body-name: visit
