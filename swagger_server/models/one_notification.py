@@ -58,7 +58,7 @@ class OneNotification(Model):
         :return: The device_mac of this OneNotification.
         :rtype: str
         """
-        return self._device_mac
+        return self._person_phone
 
     @person_phone.setter
     def person_phone(self, person_phone: str):
