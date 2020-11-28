@@ -14,28 +14,28 @@ class OneNotification(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, device_mac: str=None, known: bool=None, name: str=None):  # noqa: E501
+    def __init__(self, person_phone: str=None, known: bool=None, name: str=None):  # noqa: E501
         """OneNotification - a model defined in Swagger
 
-        :param device_mac: The device_mac of this OneNotification.  # noqa: E501
-        :type device_mac: str
+        :param person_phone: The device_mac of this OneNotification.  # noqa: E501
+        :type person_phone: str
         :param known: The known of this OneNotification.  # noqa: E501
         :type known: bool
         :param name: The name of this OneNotification.  # noqa: E501
         :type name: str
         """
         self.swagger_types = {
-            'device_mac': str,
+            'person_phone': str,
             'known': bool,
             'name': str
         }
 
         self.attribute_map = {
-            'device_mac': 'device_mac',
+            'person_phone': 'person_phone',
             'known': 'known',
             'name': 'name'
         }
-        self._device_mac = device_mac
+        self._person_phone = person_phone
         self._known = known
         self._name = name
 
@@ -51,7 +51,7 @@ class OneNotification(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def device_mac(self) -> str:
+    def person_phone(self) -> str:
         """Gets the device_mac of this OneNotification.
 
 
@@ -60,16 +60,16 @@ class OneNotification(Model):
         """
         return self._device_mac
 
-    @device_mac.setter
-    def device_mac(self, device_mac: str):
-        """Sets the device_mac of this OneNotification.
+    @person_phone.setter
+    def person_phone(self, person_phone: str):
+        """Sets the person_phone of this OneNotification.
 
 
-        :param device_mac: The device_mac of this OneNotification.
-        :type device_mac: str
+        :param person_phone: The person_phone of this OneNotification.
+        :type person_phone: str
         """
 
-        self._device_mac = device_mac
+        self._person_phone = person_phone
 
     @property
     def known(self) -> bool:
