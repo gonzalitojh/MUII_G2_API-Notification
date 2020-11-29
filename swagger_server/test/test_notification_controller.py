@@ -3,7 +3,6 @@
 from __future__ import absolute_import
 
 from flask import json
-from six import BytesIO
 
 from swagger_server.models.notification import Notification  # noqa: E501
 from swagger_server.models.one_notification import OneNotification  # noqa: E501
