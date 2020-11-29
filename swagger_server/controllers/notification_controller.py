@@ -26,7 +26,7 @@ def send_notification_all(visit):  # noqa: E501
             known_visitor = 'known and his/her name is ' + visit.name
         else:
             known_visitor = 'not known'
-    return jsonify({"msesage": MESSAGE_TO_ALL_LEGITIMATE_PERSON.format(known_visitor)})
+    return jsonify({"message": MESSAGE_TO_ALL_LEGITIMATE_PERSON.format(known_visitor)})
 
 
 def send_notification_one_person(visit):  # noqa: E501
@@ -46,7 +46,7 @@ def send_notification_one_person(visit):  # noqa: E501
             known_visitor = 'known and his/her name is ' + visit.name
         else:
             known_visitor = 'not known'
-    return jsonify({"msesage": MESSAGE_TO_ONE_LEGITIMATE_PERSON.format(visit.person_phone, known_visitor)})
+    return jsonify({"message": MESSAGE_TO_ONE_LEGITIMATE_PERSON.format(visit.person_phone, known_visitor)})
 
 
 def send_notification_user(visit):  # noqa: E501
@@ -66,4 +66,4 @@ def send_notification_user(visit):  # noqa: E501
             known_visitor = 'known and his/her name is ' + visit.name
         else:
             known_visitor = 'not known'
-    return jsonify({"msesage": MESSAGE_TO_USER.format(known_visitor)})
+    return jsonify({"message": MESSAGE_TO_USER.format(known_visitor)})
